@@ -1,11 +1,13 @@
-### Build C++
-
+### Build and run web socket server
 ```sh
-c++ -I path/to/boost_1_82_0/ main.cpp -o main
+cd examples/
+c++ -I ../boost_1_82_0/ -pthread websocketServerSync.cpp -o websocketServerSync
+./websocketServerSync 127.0.0.1 8083
 ```
 
-### Run C++
-
+### Build and run web socket client
 ```sh
-./main
+cd examples/
+c++ -I ../boost_1_82_0/ -pthread clientSync.cpp -o clientSync
+./clientSync 127.0.0.1 8083
 ```
