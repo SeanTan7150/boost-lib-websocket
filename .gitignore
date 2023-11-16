@@ -1,0 +1,5 @@
+# Ignore .vscode
+.vscode
+
+# Ignore any executable file
+/examples/*.exe
