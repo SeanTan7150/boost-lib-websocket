@@ -1,21 +1,42 @@
-### Build and run web socket server
+# C++ Web Socket
+
+### Prerequisites
+
+- [boost lib](https://www.boost.org)
+- [CMake](https://cmake.org/download/)
+
+### Build with CMake
 
 ```sh
-cd examples/
-c++ -I ../boost_1_82_0/ -pthread websocketServerSync.cpp -o websocketServerSync
-./websocketServerSync 127.0.0.1 8083
+cd boost-lib-websocket
+cmake .
+make -j 4
 ```
 
-* Server will wait for web socket handshake from clients
-* When handshake is accepted, server will wait to receive message from clients and print it out
-
-### Build and run web socket client
+### Run web socket server
 
 ```sh
-cd examples/
-c++ -I ../boost_1_82_0/ -pthread clientSync.cpp -o clientSync
-./clientSync 127.0.0.1 8083
+./WSChatServer/WSChatServer
 ```
 
-* Client will perform handshake with web socket server
-* Client will then send json data from `demo.json` to server
+### Run web socket client
+
+```sh
+./WSChatClient/WSChatClient
+```
+
+### Communication & broadcast
+
+- After a client joined the server, notifications will be received as below:
+
+```sh
+Client has joined the server: 127.0.0.1:33134
+```
+
+- Clients can now communicate with each other by giving inputs.
+
+- Messages sent by client will be broadcasted by the server to every connected clients.
+
+- To disconnected properly, client may enter `\q` command.
+
+- To shut down the server, enter `CTRL + C`.
