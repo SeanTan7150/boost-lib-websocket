@@ -1,0 +1,11 @@
+/home/tanxiuhaw/boost_tutorial/CMakeFiles/rebuild_cache.dir
+/home/tanxiuhaw/boost_tutorial/CMakeFiles/edit_cache.dir
+/home/tanxiuhaw/boost_tutorial/WSCHATNetwork/CMakeFiles/rebuild_cache.dir
+/home/tanxiuhaw/boost_tutorial/WSCHATNetwork/CMakeFiles/edit_cache.dir
+/home/tanxiuhaw/boost_tutorial/WSCHATNetwork/CMakeFiles/WSCHATNetwork.dir
+/home/tanxiuhaw/boost_tutorial/WSCHATClient/CMakeFiles/rebuild_cache.dir
+/home/tanxiuhaw/boost_tutorial/WSCHATClient/CMakeFiles/edit_cache.dir
+/home/tanxiuhaw/boost_tutorial/WSCHATClient/CMakeFiles/WSCHATClient.dir
+/home/tanxiuhaw/boost_tutorial/WSCHATServer/CMakeFiles/rebuild_cache.dir
+/home/tanxiuhaw/boost_tutorial/WSCHATServer/CMakeFiles/edit_cache.dir
+/home/tanxiuhaw/boost_tutorial/WSCHATServer/CMakeFiles/WSCHATServer.dir

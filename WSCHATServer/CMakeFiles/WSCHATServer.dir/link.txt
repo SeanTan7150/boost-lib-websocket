@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/WSCHATServer.dir/main.cpp.o  -o WSCHATServer  ../WSCHATNetwork/libWSCHATNetwork.a -lpthread 

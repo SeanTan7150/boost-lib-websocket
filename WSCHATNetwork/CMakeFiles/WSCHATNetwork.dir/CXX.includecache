@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/tanxiuhaw/boost_tutorial/WSCHATNetwork/src/TCPClient.cpp
+WSCHATNetwork/TCPClient.h
+-
+
+WSCHATNetwork/include/WSCHATNetwork/TCPClient.h
+boost/asio.hpp
+-
+queue
+-
+
