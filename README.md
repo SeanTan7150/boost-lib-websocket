@@ -19,6 +19,8 @@ sudo apt update && sudo apt upgrade
 sudo apt-get install build-essential g++ python3-dev autotools-dev libicu-dev libbz2-dev libboost-all-dev
 ```
 
+- Download Boost `1.82.0` from https://www.boost.org and unzip with `tar xvf` command.
+
 - Setup Boost's bootstrap
 
 ```sh
