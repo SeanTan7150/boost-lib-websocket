@@ -6,9 +6,6 @@
 
 namespace WSCHAT
 {
-    // namespace net = boost::asio;
-    // using tcp = net::ip::tcp;
-
     TCPServer::TCPServer(IPVersion ipVersion, int port)
         : _ipVersion(ipVersion),
           _port(port),
@@ -28,6 +25,7 @@ namespace WSCHAT
             std::cerr << e.what() << std::endl;
             return -1;
         }
+        return 0;
     }
 
     void TCPServer::Broadcast(const std::string &message)

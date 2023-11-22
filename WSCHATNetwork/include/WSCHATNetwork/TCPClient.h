@@ -1,12 +1,16 @@
 #pragma once
 
 #include <boost/asio.hpp>
+#include <boost/property_tree/ptree.hpp>
+#include <boost/property_tree/json_parser.hpp>
 
 #include <queue>
+#include <ctime>
 
 namespace WSCHAT
 {
     namespace net = boost::asio;
+    namespace pt = boost::property_tree;
     using tcp = net::ip::tcp;
 
     using OnMessageHandler = std::function<void(std::string)>;
@@ -30,6 +34,10 @@ namespace WSCHAT
         void AsyncWrite();
 
         void OnWrite(boost::system::error_code ec, size_t bytesTransferred);
+
+        std::string ParseMessageToJson(const std::string &message);
+
+        char *GetCurrentDateTime();
 
     public:
         OnMessageHandler OnMessage;

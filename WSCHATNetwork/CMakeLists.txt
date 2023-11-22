@@ -3,7 +3,8 @@ cmake_minimum_required(VERSION 3.15)
 
 set(CMAKE_CXX_STANDARD 20)
 
-find_package(Boost REQUIRED)
+find_package(Boost 1.82.0 REQUIRED
+             COMPONENTS json)
 
 file(GLOB_RECURSE SOURCES src/*.cpp)
 

@@ -2,8 +2,35 @@
 
 ### Prerequisites
 
-- [boost lib](https://www.boost.org)
+- [Boost 1.82.0](https://www.boost.org)
 - [CMake](https://cmake.org/download/)
+
+### Boost Installation
+
+- Update Ubuntu Linux
+
+```sh
+sudo apt update && sudo apt upgrade
+```
+
+- Install Developer's tool
+
+```sh
+sudo apt-get install build-essential g++ python3-dev autotools-dev libicu-dev libbz2-dev libboost-all-dev
+```
+
+- Setup Boost's bootstrap
+
+```sh
+cd boost_1_82_0
+./bootstrap.h --prefix=/usr/
+```
+
+- Install Boost
+
+```sh
+sudo ./b2 install
+```
 
 ### Build with CMake
 

@@ -1,5 +1,8 @@
-# Ignore .vscode
-/.vscode
+.vscode/
 
-# Ignore any executable file
-/examples/*.exe
+CMakeCache.txt
+CMakeFiles
+Makefile
+cmake_install.cmake
+
+boost_1_82_0/

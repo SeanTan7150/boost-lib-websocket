@@ -28,7 +28,7 @@ namespace WSCHAT
     void TCPClient::SendMessage(const std::string &message)
     {
         bool queueIdle = _outgoingMessages.empty();
-        _outgoingMessages.push(message);
+        _outgoingMessages.push(ParseMessageToJson(message));
 
         if (queueIdle)
         {
@@ -76,5 +76,21 @@ namespace WSCHAT
         {
             AsyncWrite();
         }
+    }
+
+    std::string TCPClient::ParseMessageToJson(const std::string &message)
+    {
+        pt::ptree propertyTree;
+        std::ostringstream buffer;
+        propertyTree.put("message", message);
+        propertyTree.add("timestamp", GetCurrentDateTime());
+        pt::write_json(buffer, propertyTree, false);
+        return buffer.str();
+    }
+
+    char *TCPClient::GetCurrentDateTime()
+    {
+        time_t now = time(0);
+        return ctime(&now);
     }
 }
