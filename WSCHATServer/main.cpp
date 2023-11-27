@@ -18,7 +18,20 @@ int main(int agrc, char *argv[])
 
     server.OnClientMessage = [&server](const std::string &message)
     {
-        server.Broadcast(message);
+        // server.Broadcast(message);
+        // std::string recipient = server.GetConnectedClients().begin()->get()->GetUsername();
+        // std::cout << server.GetConnectedClients().begin()->get()->GetUsername() << std::endl;
+
+        // for (auto &client : server.GetConnectedClients())
+        // {
+        //     if (client.get()->GetUsername() + "\n" == message)
+        //     {
+        //         server.DirectMessage(client.get()->shared_from_this(), message);
+        //         break;
+        //     }
+        // }
+
+        std::cout << message[message.find_last_of("recipient")] << std::endl;
     };
 
     server.Run();

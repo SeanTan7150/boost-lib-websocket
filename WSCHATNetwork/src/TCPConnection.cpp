@@ -5,9 +5,6 @@
 
 namespace WSCHAT
 {
-    // namespace net = boost::asio;
-    // using tcp = net::ip::tcp;
-
     TCPConnection::TCPConnection(tcp::socket &&socket)
         : _socket(std::move(socket))
     {
@@ -51,7 +48,8 @@ namespace WSCHAT
         }
 
         std::stringstream message;
-        message << _username << ": " << std::istream(&_buffer).rdbuf();
+        // message << _username << ": " << std::istream(&_buffer).rdbuf();
+        message << std::istream(&_buffer).rdbuf();
         _buffer.consume(bytesTransferred);
         _messageHandler(message.str());
         AsyncRead();

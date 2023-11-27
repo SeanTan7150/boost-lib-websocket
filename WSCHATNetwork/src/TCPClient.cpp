@@ -25,10 +25,11 @@ namespace WSCHAT
         _socket.close(ec);
     }
 
-    void TCPClient::SendMessage(const std::string &message)
+    void TCPClient::SendMessage(const std::string &recipient, const std::string &message)
     {
         bool queueIdle = _outgoingMessages.empty();
-        _outgoingMessages.push(ParseMessageToJson(message));
+        _outgoingMessages.push(ParseMessageToJson(recipient, message));
+        // _outgoingMessages.push(message);
 
         if (queueIdle)
         {
@@ -78,12 +79,20 @@ namespace WSCHAT
         }
     }
 
-    std::string TCPClient::ParseMessageToJson(const std::string &message)
+    std::string TCPClient::ParseMessageToJson(const std::string &recipient, const std::string &message)
     {
         pt::ptree propertyTree;
+        pt::ptree messageChild;
         std::ostringstream buffer;
-        propertyTree.put("message", message);
+
+        messageChild.put("file", "demo.txt");
+        messageChild.put("content", message);
+
+        propertyTree.put("sender", "client");
+        propertyTree.add("recipient", recipient);
+        propertyTree.add_child("message", messageChild);
         propertyTree.add("timestamp", GetCurrentDateTime());
+
         pt::write_json(buffer, propertyTree, false);
         return buffer.str();
     }

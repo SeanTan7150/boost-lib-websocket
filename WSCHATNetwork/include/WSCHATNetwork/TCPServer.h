@@ -32,6 +32,10 @@ namespace WSCHAT
 
         void Broadcast(const std::string &message);
 
+        void DirectMessage(TCPConnection::ptr _connection, const std::string &message);
+
+        std::unordered_set<TCPConnection::ptr> GetConnectedClients();
+
     private:
         void StartAccept();
 

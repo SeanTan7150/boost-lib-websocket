@@ -24,7 +24,7 @@ namespace WSCHAT
 
         void Stop();
 
-        void SendMessage(const std::string &message);
+        void SendMessage(const std::string &recipient, const std::string &message);
 
     private:
         void AsyncRead();
@@ -35,7 +35,7 @@ namespace WSCHAT
 
         void OnWrite(boost::system::error_code ec, size_t bytesTransferred);
 
-        std::string ParseMessageToJson(const std::string &message);
+        std::string ParseMessageToJson(const std::string &recipient, const std::string &message);
 
         char *GetCurrentDateTime();
 

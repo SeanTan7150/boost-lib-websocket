@@ -36,6 +36,16 @@ namespace WSCHAT
         }
     }
 
+    void TCPServer::DirectMessage(TCPConnection::ptr connection, const std::string &message)
+    {
+        connection->SendMessage(message);
+    }
+
+    std::unordered_set<TCPConnection::ptr> TCPServer::GetConnectedClients()
+    {
+        return _connections;
+    }
+
     void TCPServer::StartAccept()
     {
         _socket.emplace(_ioc);
